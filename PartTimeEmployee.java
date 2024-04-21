@@ -20,6 +20,7 @@ public class PartTimeEmployee extends Employee {
     public String toString() {
         return super.toString()
                 + "Position: " + this.position + "\n"
+                + "Hour Rate: " + this.hourRate + "Eur/h\n"
                 + "Number of hours of work: " + this.hours + "\n"
                 + "Salary: " + this.salary + "Eur";
     }
