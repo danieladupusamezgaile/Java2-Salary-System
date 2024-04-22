@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class Demo {
     Scanner sc;
-    int option1;
-    int option2;
     List<Employee> employees = new ArrayList<>();
 
     void menu() {
+        int option1;
         this.sc = new Scanner(System.in);
         System.out.println("-------------------------------------");
         System.out.println("|       Choose from the menu        |");
@@ -29,9 +28,9 @@ public class Demo {
             System.out.print("-->");
             sc.next();
         }
-        this.option1 = sc.nextInt(); // when int provided save to variable
+        option1 = sc.nextInt(); // when int provided save to variable
 
-        while (this.option1 <= 0 || this.option1 > 5) { // while input is not from menu
+        while (option1 <= 0 || option1 > 5) { // while input is not from menu
             System.out.println("Not a valid option!");
             System.out.println("Coose option"); // continue to ask for input
             System.out.print("-->");
@@ -43,28 +42,29 @@ public class Demo {
                 sc.next();
             }
 
-            this.option1 = sc.nextInt();
+            option1 = sc.nextInt();
         }
 
-        if (this.option1 == 1) {
+        if (option1 == 1) {
             this.employeeType();
         }
-        if (this.option1 == 2) {
+        if (option1 == 2) {
             this.printEmployeeData();
         }
-        if (this.option1 == 3) {
+        if (option1 == 3) {
             this.printByPosition();
         }
-        if (this.option1 == 4) {
+        if (option1 == 4) {
             this.printByContract();
         }
-        if (this.option1 == 5) {
+        if (option1 == 5) {
             System.out.println("Thank you, bye");
             return;
         }
     }
 
     void employeeType() {
+        int option2;
         System.out.println("-------------------------------------");
         System.out.println("|   1. Full Time Employee           |");
         System.out.println("|   2. Part Time Employee           |");
@@ -81,9 +81,9 @@ public class Demo {
             System.out.print("-->");
             sc.next();
         }
-        this.option2 = sc.nextInt(); // when int provided save to variable
+        option2 = sc.nextInt(); // when int provided save to variable
 
-        while (this.option2 <= 0 || this.option2 > 4) { // while input is not from menu
+        while (option2 <= 0 || option2 > 4) { // while input is not from menu
             System.out.println("Not a valid option!");
             System.out.println("Coose option"); // continue to ask for input
             System.out.print("-->");
@@ -95,19 +95,19 @@ public class Demo {
                 sc.next();
             }
 
-            this.option2 = sc.nextInt();
+            option2 = sc.nextInt();
         }
 
-        if (this.option2 == 1) {
-            this.registerFullTimeEmployee();
+        if (option2 == 1) {
+            registerFullTimeEmployee();
         }
-        if (this.option2 == 2) {
+        if (option2 == 2) {
             this.registerPartTimeEmployee();
         }
-        if (this.option2 == 3) {
+        if (option2 == 3) {
             this.registerCommissionEmployee();
         }
-        if (this.option2 == 4) {
+        if (option2 == 4) {
             this.registerBaseCommissionEmployee();
         }
     }
@@ -118,9 +118,9 @@ public class Demo {
         String firstName = sc.next();
         System.out.println("Last name");
         String lastName = sc.next();
-        System.out.println("Personal Number");
+        System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract");
+        System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
 
         FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
@@ -137,9 +137,9 @@ public class Demo {
         String firstName = sc.next();
         System.out.println("Last name");
         String lastName = sc.next();
-        System.out.println("Personal Number");
+        System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract");
+        System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
         System.out.println("Hours of Work");
         // VALIDATE INPUT
@@ -166,9 +166,9 @@ public class Demo {
         String firstName = sc.next();
         System.out.println("Last name");
         String lastName = sc.next();
-        System.out.println("Personal Number");
+        System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract");
+        System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
         System.out.println("Number of Sales");
         // VALIDATE INPUT
@@ -195,9 +195,9 @@ public class Demo {
         String firstName = sc.next();
         System.out.println("Last name");
         String lastName = sc.next();
-        System.out.println("Personal Number");
+        System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract");
+        System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
         System.out.println("Number of Sales");
         // VALIDATE INPUT
@@ -220,15 +220,15 @@ public class Demo {
     }
 
     void printEmployeeData() {
-        System.out.println("-------------------------------------");
-        System.out.println("|       Employee Information        |");
-        System.out.println("-------------------------------------");
+        System.out.println("---------------------------------------------");
+        System.out.println("|           Employee Information            |");
+        System.out.println("---------------------------------------------");
         for (Employee employee : employees) {
             employee.income();
             System.out.println(employee.toString());
-            System.out.println("--------------------------------------");
+            System.out.println("---------------------------------------------");
         }
-        System.out.println("Press 1 to continue..");
+        System.out.println("Press any value to continue..");
         System.out.print("-->");
         
         if (sc.hasNext()) {
@@ -237,31 +237,33 @@ public class Demo {
     }
 
     void printByPosition() {
-        System.out.println("---------------------------------");
-        System.out.println("|       Employee Position       |");
-        System.out.println("---------------------------------");
+        System.out.println("----------------------------------------");
+        System.out.println("|           Employee Position          |");
+        System.out.println("----------------------------------------");
         for (Employee employee : employees) {
             System.out.println(employee.getFirstName() + " " + employee.getLastName() + " - "
                     + employee.getPosition());
-            System.out.println("---------------------------------");
+                    System.out.println("----------------------------------------");
         }
-        System.out.println("Press 1 to continue..");
+        System.out.println("Press any value to continue..");
+        System.out.print("-->");
         if (sc.hasNext()) {
             this.menu();
         }
     }
 
     void printByContract() {
-        System.out.println("---------------------------------");
-        System.out.println("|       Employee Contract       |");
-        System.out.println("---------------------------------");
+        System.out.println("----------------------------------------");
+        System.out.println("|           Employee Contract          |");
+        System.out.println("----------------------------------------");
         for (Employee employee : employees) {
             System.out.println(employee.getFirstName() + " " +
                     employee.getLastName() + " - "
                     + employee.getContractType());
-            System.out.println("---------------------------------");
+                    System.out.println("----------------------------------------");
         }
-        System.out.println("Press 1 to continue..");
+        System.out.println("Press any value to continue..");
+        System.out.print("-->");
         if (sc.hasNext()) {
             this.menu();
         }
