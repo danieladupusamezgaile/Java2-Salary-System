@@ -18,48 +18,51 @@ public class Demo {
         System.out.println("|   4. Print by Contract            |");
         System.out.println("|   5. Exit                         |");
         System.out.println("-------------------------------------");
-        System.out.println("Coose option");
-        System.out.print("-->");
+        System.out.println("Choose option");
+        System.out.print("--> ");
 
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
             System.out.println("Not a valid option!");
-            System.out.println("Coose option"); // continue to ask for input
-            System.out.print("-->");
+            System.out.println("Choose option"); // continue to ask for input
+            System.out.print("--> ");
             sc.next();
         }
         option1 = sc.nextInt(); // when int provided save to variable
 
         while (option1 <= 0 || option1 > 5) { // while input is not from menu
             System.out.println("Not a valid option!");
-            System.out.println("Coose option"); // continue to ask for input
-            System.out.print("-->");
+            System.out.println("Choose option"); // continue to ask for input
+            System.out.print("--> ");
 
             while (!sc.hasNextInt()) { // while input is not of type int
                 System.out.println("Not a valid option!");
-                System.out.println("Coose option"); // continue to ask for input
-                System.out.print("-->");
+                System.out.println("Choose option"); // continue to ask for input
+                System.out.print("--> ");
                 sc.next();
             }
 
             option1 = sc.nextInt();
         }
 
-        if (option1 == 1) {
-            this.employeeType();
-        }
-        if (option1 == 2) {
-            this.printEmployeeData();
-        }
-        if (option1 == 3) {
-            this.printByPosition();
-        }
-        if (option1 == 4) {
-            this.printByContract();
-        }
-        if (option1 == 5) {
-            System.out.println("Thank you, bye");
-            return;
+        switch (option1) {
+            case 1:
+                this.employeeType();
+                break;
+            case 2:
+                this.printEmployeeData();
+                break;
+            case 3:
+                this.printByPosition();
+                break;
+            case 4:
+                this.printByContract();
+                break;
+            case 5:
+                System.out.println("Thank you, bye");
+                break;
+            default:
+                System.out.println("Invalid choice. Please enter a number between 1 and 5.");
         }
     }
 
@@ -71,27 +74,27 @@ public class Demo {
         System.out.println("|   3. Commissiom Employee          |");
         System.out.println("|   4. Base Commission Employee     |");
         System.out.println("-------------------------------------");
-        System.out.println("Coose Employee Type");
-        System.out.print("-->");
+        System.out.println("Choose Employee Type");
+        System.out.print("--> ");
 
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
             System.out.println("Not a valid option!");
-            System.out.println("Coose option"); // continue to ask for input
-            System.out.print("-->");
+            System.out.println("Choose option"); // continue to ask for input
+            System.out.print("--> ");
             sc.next();
         }
         option2 = sc.nextInt(); // when int provided save to variable
 
         while (option2 <= 0 || option2 > 4) { // while input is not from menu
             System.out.println("Not a valid option!");
-            System.out.println("Coose option"); // continue to ask for input
-            System.out.print("-->");
+            System.out.println("Choose option"); // continue to ask for input
+            System.out.print("--> ");
 
             while (!sc.hasNextInt()) { // while input is not of type int
                 System.out.println("Not a valid option!");
-                System.out.println("Coose option"); // continue to ask for input
-                System.out.print("-->");
+                System.out.println("Choose option"); // continue to ask for input
+                System.out.print("--> ");
                 sc.next();
             }
 
@@ -120,14 +123,16 @@ public class Demo {
         String lastName = sc.next();
         System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract (annual/seasonal)");
-        String contractType = sc.next();
-        // VALIDATE INPUT
-        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
-            System.out.println("Please, choose from the given options");
-            System.out.println("Type of Contract (annual/seasonal)");
-            contractType = sc.next();
+        System.out.println("Type of Contract (1 for Annual / 2 for Seasonal)");
+        int contractChoice = sc.nextInt();
+        String contractType;
+
+        // Validate input and set contract type accordingly
+        while (contractChoice != 1 && contractChoice != 2) {
+            System.out.println("Please choose 1 for Annual or 2 for Seasonal: ");
+            contractChoice = sc.nextInt();
         }
+        contractType = (contractChoice == 1) ? "annual" : "seasonal";
 
         FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
         fullTimeEmployee.setFirstName(firstName);
@@ -145,20 +150,23 @@ public class Demo {
         String lastName = sc.next();
         System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract (annual/seasonal)");
-        String contractType = sc.next();
-        // VALIDATE INPUT
-        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
-            System.out.println("Please, choose from the given options");
-            System.out.println("Type of Contract (annual/seasonal)");
-            contractType = sc.next();
+        System.out.println("Type of Contract (1 for Annual / 2 for Seasonal)");
+        int contractChoice = sc.nextInt();
+        String contractType;
+
+        // Validate input and set contract type accordingly
+        while (contractChoice != 1 && contractChoice != 2) {
+            System.out.println("Please choose 1 for Annual or 2 for Seasonal: ");
+            contractChoice = sc.nextInt();
         }
+        contractType = (contractChoice == 1) ? "annual" : "seasonal";
+
         System.out.println("Hours of Work");
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
             System.out.println("Not a valid input!");
             System.out.println("Hours of Work"); // continue to ask for input
-            System.out.print("-->");
+            System.out.print("--> ");
             sc.next();
         }
         int hours = sc.nextInt();
@@ -180,20 +188,23 @@ public class Demo {
         String lastName = sc.next();
         System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract (annual/seasonal)");
-        String contractType = sc.next();
-        // VALIDATE INPUT
-        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
-            System.out.println("Please, choose from the given options");
-            System.out.println("Type of Contract (annual/seasonal)");
-            contractType = sc.next();
+        System.out.println("Type of Contract (1 for Annual / 2 for Seasonal)");
+        int contractChoice = sc.nextInt();
+        String contractType;
+
+        // Validate input and set contract type accordingly
+        while (contractChoice != 1 && contractChoice != 2) {
+            System.out.println("Please choose 1 for Annual or 2 for Seasonal: ");
+            contractChoice = sc.nextInt();
         }
+        contractType = (contractChoice == 1) ? "annual" : "seasonal";
+
         System.out.println("Number of Sales");
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
             System.out.println("Not a valid input!");
             System.out.println("Number of Sales"); // continue to ask for input
-            System.out.print("-->");
+            System.out.print("--> ");
             sc.next();
         }
         int numOfSales = sc.nextInt();
@@ -215,20 +226,23 @@ public class Demo {
         String lastName = sc.next();
         System.out.println("Personal Number (xxxxxx-xxxxx)");
         String personalNumber = sc.next();
-        System.out.println("Type of Contract (annual/seasonal)");
-        String contractType = sc.next();
-        // VALIDATE INPUT
-        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
-            System.out.println("Please, choose from the given options");
-            System.out.println("Type of Contract (annual/seasonal)");
-            contractType = sc.next();
+        System.out.println("Type of Contract (1 for Annual / 2 for Seasonal)");
+        int contractChoice = sc.nextInt();
+        String contractType;
+
+        // Validate input and set contract type accordingly
+        while (contractChoice != 1 && contractChoice != 2) {
+            System.out.println("Please choose 1 for Annual or 2 for Seasonal: ");
+            contractChoice = sc.nextInt();
         }
+        contractType = (contractChoice == 1) ? "annual" : "seasonal";
+
         System.out.println("Number of Sales");
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
             System.out.println("Not a valid input!");
             System.out.println("Number of Sales"); // continue to ask for input
-            System.out.print("-->");
+            System.out.print("--> ");
             sc.next();
         }
         int numOfSales = sc.nextInt();
@@ -252,12 +266,10 @@ public class Demo {
             System.out.println(employee.toString());
             System.out.println("---------------------------------------------");
         }
-        System.out.println("Press any value to continue..");
-        System.out.print("-->");
-
-        if (sc.hasNext()) {
-            this.menu();
-        }
+        System.out.println("Press Enter to continue..");
+        sc.nextLine(); // Consume the newline character left by nextInt()
+        sc.nextLine(); // Wait for any key press
+        this.menu(); // Return to the menu
     }
 
     void printByPosition() {
@@ -269,11 +281,10 @@ public class Demo {
                     + employee.getPosition());
             System.out.println("----------------------------------------");
         }
-        System.out.println("Press any value to continue..");
-        System.out.print("-->");
-        if (sc.hasNext()) {
-            this.menu();
-        }
+        System.out.println("Press Enter to continue..");
+        sc.nextLine(); // Consume the newline character left by nextInt()
+        sc.nextLine(); // Wait for any key press
+        this.menu(); // Return to the menu
     }
 
     void printByContract() {
@@ -286,11 +297,10 @@ public class Demo {
                     + employee.getContractType());
             System.out.println("----------------------------------------");
         }
-        System.out.println("Press any value to continue..");
-        System.out.print("-->");
-        if (sc.hasNext()) {
-            this.menu();
-        }
+        System.out.println("Press Enter to continue..");
+        sc.nextLine(); // Consume the newline character left by nextInt()
+        sc.nextLine(); // Wait for any key press
+        this.menu(); // Return to the menu
     }
 
     public static void main(String[] args) {
