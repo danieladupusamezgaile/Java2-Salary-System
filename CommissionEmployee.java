@@ -31,7 +31,6 @@ public class CommissionEmployee extends Employee {
     @Override
     public String toString() {
         return super.toString()
-                // + "Position: " + this.position + "\n"
                 + "Number of Sales: " + this.numOfSales + "\n"
                 + "Commission per Sale: " + this.commission + "Eur\n"
                 + "Salary: " + this.salary + "Eur";
