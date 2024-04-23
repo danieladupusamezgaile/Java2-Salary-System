@@ -16,8 +16,8 @@ public class BaseCommissionEmployee extends CommissionEmployee {
 
     @Override
     public String toString() {
-        return "Name: " + getFirstName() + " " + getLastName() + "\n"
-                + "Personal Number: " + getPersonalNumber() + "\n"
+        return "Name: " + this.getFirstName() + " " + this.getLastName() + "\n"
+                + "Personal Number: " + this.getPersonalNumber() + "\n"
                 + "Position: " + this.position + "\n"
                 + "Base Salary: " + this.baseSalary + "Eur\n"
                 + "Number of Sales: " + getNumOfSales() + "\n"
