@@ -7,10 +7,6 @@ public class FullTimeEmployee extends Employee {
         setPosition(position);
     }
 
-    public String getPosition() {
-        return this.position;
-    }
-
     void income() {
         this.salary = this.baseSalary;
     }
@@ -18,7 +14,7 @@ public class FullTimeEmployee extends Employee {
     @Override
     public String toString() {
         return super.toString()
-                + "Position: " + this.position + "\n"
+                // + "Position: " + getPosition() + "\n"
                 + "Base Salary: " + this.baseSalary + "Eur \n"
                 + "Salary: " + this.salary + "Eur";
     }

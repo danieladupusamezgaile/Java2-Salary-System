@@ -5,13 +5,12 @@ public class BaseCommissionEmployee extends CommissionEmployee {
     private double salary;
 
     BaseCommissionEmployee() {
-        super.setPosition(position);
+        setPosition(position);
     }
 
     @Override
     void income() {
         super.income();
-        // this.getS = this.commission*this.numOfSales;
         this.salary = getSalary() + this.baseSalary + this.baseSalary * this.bonus / 100;
     }
 
