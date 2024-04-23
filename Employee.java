@@ -50,6 +50,7 @@ abstract public class Employee {
     @Override
     public String toString() {
         return "Name: " + getFirstName() + " " + getLastName() + "\n"
-                + "Personal Number: " + getPersonalNumber() + "\n";
+                + "Personal Number: " + getPersonalNumber() + "\n"
+                + "Position: " + getPosition() + "\n";
     }
 }
