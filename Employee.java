@@ -49,8 +49,8 @@ abstract public class Employee {
 
     @Override
     public String toString() {
-        return "Name: " + getFirstName() + " " + getLastName() + "\n"
-                + "Personal Number: " + getPersonalNumber() + "\n"
-                + "Position: " + getPosition() + "\n";
+        return "Name: " + this.firstName + " " + this.lastName + "\n"
+                + "Personal Number: " + this.personalNumber + "\n"
+                + "Position: " + this.position + "\n";
     }
 }
