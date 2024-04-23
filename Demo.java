@@ -122,6 +122,12 @@ public class Demo {
         String personalNumber = sc.next();
         System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
+        // VALIDATE INPUT
+        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
+            System.out.println("Please, choose from the given options");
+            System.out.println("Type of Contract (annual/seasonal)");
+            contractType = sc.next();
+        }
 
         FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
         fullTimeEmployee.setFirstName(firstName);
@@ -141,6 +147,12 @@ public class Demo {
         String personalNumber = sc.next();
         System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
+        // VALIDATE INPUT
+        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
+            System.out.println("Please, choose from the given options");
+            System.out.println("Type of Contract (annual/seasonal)");
+            contractType = sc.next();
+        }
         System.out.println("Hours of Work");
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
@@ -170,6 +182,12 @@ public class Demo {
         String personalNumber = sc.next();
         System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
+        // VALIDATE INPUT
+        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
+            System.out.println("Please, choose from the given options");
+            System.out.println("Type of Contract (annual/seasonal)");
+            contractType = sc.next();
+        }
         System.out.println("Number of Sales");
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
@@ -199,6 +217,12 @@ public class Demo {
         String personalNumber = sc.next();
         System.out.println("Type of Contract (annual/seasonal)");
         String contractType = sc.next();
+        // VALIDATE INPUT
+        while (!("annual".equals(contractType) || "seasonal".equals(contractType))) {
+            System.out.println("Please, choose from the given options");
+            System.out.println("Type of Contract (annual/seasonal)");
+            contractType = sc.next();
+        }
         System.out.println("Number of Sales");
         // VALIDATE INPUT
         while (!sc.hasNextInt()) { // while input is not of type int
@@ -230,7 +254,7 @@ public class Demo {
         }
         System.out.println("Press any value to continue..");
         System.out.print("-->");
-        
+
         if (sc.hasNext()) {
             this.menu();
         }
@@ -243,7 +267,7 @@ public class Demo {
         for (Employee employee : employees) {
             System.out.println(employee.getFirstName() + " " + employee.getLastName() + " - "
                     + employee.getPosition());
-                    System.out.println("----------------------------------------");
+            System.out.println("----------------------------------------");
         }
         System.out.println("Press any value to continue..");
         System.out.print("-->");
@@ -260,7 +284,7 @@ public class Demo {
             System.out.println(employee.getFirstName() + " " +
                     employee.getLastName() + " - "
                     + employee.getContractType());
-                    System.out.println("----------------------------------------");
+            System.out.println("----------------------------------------");
         }
         System.out.println("Press any value to continue..");
         System.out.print("-->");
