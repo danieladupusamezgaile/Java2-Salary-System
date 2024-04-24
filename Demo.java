@@ -61,8 +61,6 @@ public class Demo {
             case 5:
                 System.out.println("Thank you, bye");
                 break;
-            default:
-                System.out.println("Invalid choice. Please enter a number between 1 and 5.");
         }
     }
 
