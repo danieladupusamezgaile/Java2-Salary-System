@@ -69,7 +69,7 @@ public class Demo {
         System.out.println("-------------------------------------");
         System.out.println("|   1. Full Time Employee           |");
         System.out.println("|   2. Part Time Employee           |");
-        System.out.println("|   3. Commissiom Employee          |");
+        System.out.println("|   3. Commission Employee          |");
         System.out.println("|   4. Base Commission Employee     |");
         System.out.println("-------------------------------------");
         System.out.println("Choose Employee Type");
